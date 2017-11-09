@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Speedometer</string>
+    <string name="search">Find an image near you</string>
 </resources>

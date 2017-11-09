@@ -8,6 +8,6 @@ public class SpeedometerActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_speedometer);
+        setContentView(R.layout.fragment_speedometer);
     }
 }
