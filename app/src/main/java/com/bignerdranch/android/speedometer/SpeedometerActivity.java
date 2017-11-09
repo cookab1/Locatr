@@ -1,13 +1,13 @@
 package com.bignerdranch.android.speedometer;
 
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class SpeedometerActivity extends AppCompatActivity {
+public class SpeedometerActivity extends SingleFragmentActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_speedometer);
+    protected Fragment createFragment() {
+        return SpeedometerFragment.newInstance();
     }
 }
