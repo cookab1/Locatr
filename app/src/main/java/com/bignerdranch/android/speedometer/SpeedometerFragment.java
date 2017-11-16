@@ -124,13 +124,17 @@ public class SpeedometerFragment extends Fragment {
         request.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
         request.setNumUpdates(1);
         request.setInterval(0);
-        LocationServices.FusedLocationApi
-                .requestLocationUpdates(mClient, request, new LocationListener() {
-                    @Override
-                    public void onLocationChanged(Location location) {
-                        Log.i(TAG, "Got a fix: " + location);
-                    }
-                });
+        try {
+            LocationServices.FusedLocationApi
+                    .requestLocationUpdates(mClient, request, new LocationListener() {
+                        @Override
+                        public void onLocationChanged(Location location) {
+                            Log.i(TAG, "Got a fix: " + location);
+                        }
+                    });
+        } catch (SecurityException e) {
+            e.printStackTrace();
+        }
     }
 
     private boolean hasLocationPermission() {
